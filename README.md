@@ -1,6 +1,14 @@
 # VSCode で全角で入力された文字を標準出力する方法
 
-VSCode で Java プログラムを扱う際に、全角で入力された文字を標準出力する方法を説明する
+VSCode で Java プログラムを扱う際に、全角で入力された文字を標準出力する方法を説明する。
+
+## 全角入力文字は文字化けする
+
+VSCode では、Java プログラムで受付けた全角文字を標準出力すると文字化けしてしまう。
+
+理由は、VSCode が扱う文字コードが UTF-8 を想定しているのに対し、Java では、全角を Shift-JIS で扱うためだ。
+
+次の手順で、VSCode で全角を Shift-JIS で扱えるようにする。
 
 ## launcher.bat を開く
 
@@ -37,3 +45,27 @@ REM Change code page to UTF-8 for better compatibility.
 REM Execute real command passed by args
 %*
 ```
+
+## launch.json の作成
+
+次にプロジェクト直下に `.vscode` ディレクトリを作成する。さらにその中に `launch.json` ファイルを作成する。
+
+その launch.json ファイルに記載する encoding 設定は Shift-JIS にする。
+
+.vscode/launch.json
+```json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Debug (Launch) - Current File",
+      "request": "launch",
+      "mainClass": "${file}",
+      "encoding": "Shift_JIS"
+    }
+  ]
+}
+```
+
+これで、Run / Debugg 時に、入力された全角文字を文字化けせずに表示させることができる。
