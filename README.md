@@ -71,3 +71,5 @@ REM Execute real command passed by args
 ```
 
 これで、Run / Debugg 時に、入力された全角文字を文字化けせずに表示させることができる。
+
+![](./does_not_collapse.png)
