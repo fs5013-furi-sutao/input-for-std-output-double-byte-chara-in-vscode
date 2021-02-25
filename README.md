@@ -6,7 +6,7 @@ VSCode で Java プログラムを扱う際に、全角で入力された文字�
 
 VSCode では、Java プログラムで受付けた全角文字を標準出力すると文字化けしてしまう。
 
-![](./double_byte_chara)
+![](./double_byte_chara.png)
 
 理由は、VSCode が扱う文字コードが UTF-8 を想定しているのに対し、Java では、全角を Shift-JIS で扱うためだ。
 
