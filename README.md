@@ -68,9 +68,11 @@ REM Execute real command passed by args
 %*
 ```
 
-## launch.json の作成（上記の launcher.bat の更新で改善しないときのみ、以降を実施してください）
+## launch.json の作成
 
-次にプロジェクト直下に `.vscode` ディレクトリを作成する。さらにその中に `launch.json` ファイルを作成する。
+メニューから Run > Add Configuration... をクリックする。
+
+すると、プロジェクト直下に `.vscode` ディレクトリができ、さらにその中に `launch.json` ファイルが作成され、エディタでその launch.json が開かれる。
 
 その launch.json ファイルに記載する encoding 設定は Shift-JIS にする。
 
