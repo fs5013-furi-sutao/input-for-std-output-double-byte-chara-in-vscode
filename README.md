@@ -1,6 +1,6 @@
 # VSCode で全角で入力された文字を標準出力する方法
 
-VSCode で Java プログラムを扱う際に、全角で入力された文字を標準出力する方法を説明する。
+VSCode で Java プログラムを扱う際に、全角で入力された文字を標準出力する方法を説明する。## 
 
 ## 全角入力文字は文字化けする
 
@@ -8,7 +8,27 @@ VSCode では、Java プログラムで受付けた全角文字を標準出力�
 
 ![](./double_byte_chara.png)
 
-理由は、VSCode が扱う文字コードが UTF-8 を想定しているのに対し、Java では、全角を Shift-JIS で扱うためだ。
+> ### 文字入力を行うサンプルプログラム
+> 
+> ``` java
+> import java.util.Scanner;
+> 
+> public class StringInputReciever {
+> 
+>     public static void main(String[] args) {
+> 
+>         Scanner stdin = new Scanner(System.in, "Shift_JIS");
+> 
+>         System.out.print("名前を入力してください: ");
+>         String name = stdin.nextLine();
+> 
+>         System.out.format("入力された名前は %s です", name);
+>         stdin.close();
+>     }
+> }
+> ```
+
+文字化けしてしまう理由は、VSCode が扱う文字コードが UTF-8 を想定しているのに対し、Java では、全角を Shift-JIS で扱うためだ。
 
 次の手順で、VSCode で全角を Shift-JIS で扱えるようにする。
 
