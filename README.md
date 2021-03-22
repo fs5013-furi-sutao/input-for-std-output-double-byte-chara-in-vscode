@@ -95,3 +95,9 @@ REM Execute real command passed by args
 これで、Run / Debugg 時に、入力された全角文字を文字化けせずに表示させることができる。
 
 ![](./does_not_collapse.png)
+
+### 注意点
+
+main メソッド上に表示される「Run | Debug」から Java ファイルを実行すると、launch.json が反映されないことがある。
+
+そのため、Run をする場合は「Ctr + F5」、Debug をする場合は「F5」でプログラムを実行するようにする。
