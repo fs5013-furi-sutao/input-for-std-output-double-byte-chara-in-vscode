@@ -68,7 +68,7 @@ REM Execute real command passed by args
 %*
 ```
 
-## launch.json の作成
+## launch.json の作成（上記の launcher.bat の更新で改善しないときのみ、以降を実施してください）
 
 次にプロジェクト直下に `.vscode` ディレクトリを作成する。さらにその中に `launch.json` ファイルを作成する。
 
